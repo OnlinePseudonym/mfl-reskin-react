@@ -3,41 +3,27 @@ import { Link } from "react-router-dom";
 
 export default function NavMenu() {
   return (
-    <Fragment>
-      <div class="top-row pl-4 navbar navbar-dark">
-        <a class="navbar-brand" href="">
-          MFLReskin
-        </a>
-        <button class="navbar-toggler" onclick="ToggleNavMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+    <nav className="navbar navbar-expand-lg navbar-light">
+      <Link className="navbar-brand" to="/">MFL Reskin</Link>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="@NavMenuCssClass" onclick="ToggleNavMenu">
-        <ul class="nav flex-column">
-          <li class="nav-item px-3">
-            <Link class="nav-link" to="/">
-              <span class="oi oi-home" aria-hidden="true"></span> Home
-            </Link>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent" >
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/load-players">Load Players</Link>
           </li>
-          <li class="nav-item px-3">
-            <Link class="nav-link" to="/login">
-              <span class="oi oi-list-rich" aria-hidden="true"></span> Login
-            </Link>
+          <li className="nav-item">
+            <Link className="nav-link" to="/my-team">My Team</Link>
           </li>
-          <li class="nav-item px-3">
-            <Link class="nav-link" to="/load-players">
-              <span class="oi oi-list-rich" aria-hidden="true"></span> Load
-              Players
-            </Link>
-          </li>
-          <li class="nav-item px-3">
-            <Link class="nav-link" to="/my-team">
-              <span class="oi oi-list-rich" aria-hidden="true"></span> My Team
-            </Link>
+        </ul>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">Login</Link>
           </li>
         </ul>
       </div>
-    </Fragment>
+    </nav>
   );
 }
